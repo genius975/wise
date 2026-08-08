@@ -1,16 +1,13 @@
 name: "P0 - RCE via PR Title"
-
 on:
   pull_request:
     types: [opened, synchronize, reopened]
-
 jobs:
   p0_exploit:
     runs-on: ubuntu-latest
     steps:
       - name: Checkout
         uses: actions/checkout@v4
-
       - name: Run vulnerable action with PR title
         uses: transferwise/download-repo-artifact@master
         with:
